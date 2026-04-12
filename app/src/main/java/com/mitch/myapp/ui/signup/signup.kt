@@ -1,11 +1,11 @@
-package com.mitch.myapp.ui.login
+package com.mitch.myapp.ui.signup
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -18,87 +18,99 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.LottieCompositionSpec.RawRes
 import com.airbnb.lottie.compose.LottieConstants
-
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.mitch.myapp.R
+import com.mitch.myapp.ui.login.LottieAnimationWidget
 
-
-lateinit var placeholder: () -> Unit
 
 @Composable
-fun LoginScreen(modifier: Modifier){
-    //textInput
-    var emailInput by remember {mutableStateOf(value = TextFieldValue(""))  }
-    var passwordInput by remember {mutableStateOf(value = TextFieldValue(""))  }
-    Column (
+fun SignupScreen(modifier: Modifier) {
+    var usernameInput by remember { mutableStateOf(value = TextFieldValue("")) }
+    var emailInput by remember { mutableStateOf(value = TextFieldValue("")) }
+    var passwordInput by remember { mutableStateOf(value = TextFieldValue("")) }
+
+    Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-    ){
+         modifier = Modifier
+        ) {
         //lottie animation
         LottieAnimationWidget()
-        //email input
+        //username
         OutlinedTextField(
-            value = emailInput,
-            onValueChange = { emailInput=it},
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Outlined.Email,
-                    contentDescription = "Email"
-
-                )},
-                placeholder = {
-                    Text(text = "eg email@gmail.com")
-
-            },
+        value =usernameInput,
+        onValueChange ={usernameInput=it},
+        placeholder = {
+            Text(text="enter your username")
+        },
             maxLines = 1,
             modifier = Modifier.fillMaxWidth()
+        )
+         //emailinput
+        OutlinedTextField(
+        value = emailInput,
+        onValueChange = { emailInput=it},
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Outlined.Email,
+                contentDescription = "Email"
+
+            )},
+        placeholder = {
+            Text(text = "eg email@gmail.com")
+
+        },
+        maxLines = 1,
+        modifier = Modifier.fillMaxWidth()
 
         )
 
-        //password input
+        //passwordinput
         OutlinedTextField(
             value = passwordInput,
-            onValueChange = { passwordInput=it},
+            onValueChange = {passwordInput=it},
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Outlined.Email,
-                    contentDescription ="Email"
-
-                )},
-                placeholder = {
-                    Text(text="eg 1234")
+                    imageVector = Icons.Outlined.Edit,
+                    contentDescription = "Edit"
+                )
+            },
+            placeholder = {
+                Text(text = "eg 1234")
 
             },
             maxLines = 1,
             modifier = Modifier.fillMaxWidth()
         )
 
-        //button
 
 
 
-    }
-    }
 
 
-@Composable
+
+   @Composable
 fun LottieAnimationWidget(){
     val composition by rememberLottieComposition(
-        spec = RawRes( R.raw.login))
-    val progress by animateLottieCompositionAsState(
-        composition,
-    iterations = LottieConstants.IterateForever
+        LottieCompositionSpec.RawRes(R.raw.loader)
     )
+
+    // 2. Control the animation state (looping, speed, etc.)
+    val progress by animateLottieCompositionAsState(
+        composition = composition,
+        iterations = LottieConstants.IterateForever // Loop indefinitely
+    )
+
+    // 3. Display the animation
     LottieAnimation(
         composition = composition,
         progress = { progress },
-        modifier = Modifier.size(350.dp)
+        modifier = Modifier.size(200.dp)
     )
-}
+}}}

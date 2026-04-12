@@ -11,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.mitch.myapp.ui.login.LoginScreen
+import com.mitch.myapp.ui.signup.SignupScreen
 import com.mitch.myapp.ui.theme.MyAppTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,7 @@ class MainActivity : ComponentActivity() {
             MyAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()){ innerPadding ->
                    LoginScreen(modifier = Modifier.padding(innerPadding))
+                    SignupScreen(modifier = Modifier.padding(innerPadding)    )
 
             }
         }
