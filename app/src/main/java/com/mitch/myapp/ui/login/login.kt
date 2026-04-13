@@ -77,7 +77,7 @@ fun LoginScreen(modifier: Modifier){
 
             },
             maxLines = 1,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth())
 
         //button
 
