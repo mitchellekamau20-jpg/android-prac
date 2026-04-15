@@ -30,6 +30,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -87,7 +89,7 @@ fun ForgotPasswordScreen(modifier: Modifier){
             label = { Text(text = "Email Address") } ,
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.Email,
+                    imageVector =  ImageVector.vectorResource(R.drawable.outline_password_24),
                     contentDescription= "Email Input",
                     tint = primaryColor
                 )
