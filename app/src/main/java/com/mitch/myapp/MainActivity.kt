@@ -11,8 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.mitch.myapp.ui.authentication.signup.SignupScreen
-import com.mitch.myapp.ui.forgotpassword.forgotpassword.ForgotPasswordScreen
-import com.mitch.myapp.ui.login.LoginScreen
 import com.mitch.myapp.ui.theme.MyAppTheme
 
 class MainActivity : ComponentActivity() {
