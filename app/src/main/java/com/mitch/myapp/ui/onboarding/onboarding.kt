@@ -30,7 +30,7 @@ val navController: NavHostController
     get() = rememberNavController()
 
 @Composable
-fun OnboardingScreen(navController: NavController.Companion) {
+fun OnboardingScreen(navController: NavHostController) {
 
     val pages = listOf(
         "Welcome to our App",
