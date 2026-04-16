@@ -43,7 +43,7 @@ import com.mitch.myapp.ui.theme.secondaryColor
 
 
 @Composable
-fun SignupScreen(modifier: Modifier) {
+fun SignupScreen(modifier: Modifier ) {
     var usernameInput by remember { mutableStateOf(value = TextFieldValue("")) }
     var emailInput by remember { mutableStateOf(value = TextFieldValue("")) }
     var passwordInput by remember { mutableStateOf(value = TextFieldValue("")) }

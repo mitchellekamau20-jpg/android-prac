@@ -1,7 +1,6 @@
-package com.mitch.myapp.ui.login
+package com.mitch.myapp.ui.Login
 
 
-import android.R.attr.fontWeight
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
