@@ -1,4 +1,4 @@
-package com.mitch.myapp.ui.forgotpassword.forgotpassword
+package com.mitch.myapp.ui.screens.signup.forgotpassword
 
 
 

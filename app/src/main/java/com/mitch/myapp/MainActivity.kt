@@ -6,50 +6,29 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode.Companion.Screen
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.NavHost
-import com.mitch.myapp.ui.Login.LoginScreen
-import com.mitch.myapp.ui.authentication.signup.SignupScreen
-import com.mitch.myapp.ui.onboarding.OnboardingScreen
-import com.mitch.myapp.ui.onboarding.navController
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.compose.rememberNavController
+import com.mitch.myapp.ui.navigation.AppNavigation
 import com.mitch.myapp.ui.theme.MyAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             MyAppTheme {
-
-                    Scaffold { innerPadding ->   // ✅ FIXED padding usage
-
-                        NavHost(
-                            navController = navController,
-                            startDestination = Screen.Onboarding.route,
-                            modifier = Modifier.padding(innerPadding)
-                        ) {
-
-                            composable(Screen.Onboarding.route) {
-                                OnboardingScreen(navController)
-                            }
-
-                            composable(Screen.Login.route) {
-                                LoginScreen(navController as Modifier)
-                            }
-
-                            composable(Screen.Signup.route) {
-                                SignupScreen(navController as Modifier)
-                            }
-
-                        }
-        }
-    }
-}
+                val navController = rememberNavController()
+                Scaffold(modifier = Modifier.fillMaxSize()){innerpadding ->   // ✅ FIXED padding usage
+                    AppNavigation(navController. modifier Modifier.padding(innerpadding))
+                }
+            }
+        }}}
 
 
 
@@ -58,13 +37,6 @@ class MainActivity : ComponentActivity() {
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyAppTheme {
 
-    }
-}}
 
-    fun composable(route: Any, function: @Composable () -> Unit) {}
-}
+
