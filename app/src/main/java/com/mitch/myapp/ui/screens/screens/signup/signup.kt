@@ -1,4 +1,4 @@
-package com.mitch.myapp.ui.signup
+package com.mitch.myapp.ui.screens.screens.signup
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
@@ -26,7 +25,7 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.mitch.myapp.R
-import com.mitch.myapp.ui.login.LottieAnimationWidget
+import com.mitch.myapp.ui.screens.screens.login.LottieAnimationWidget
 
 
 @Composable

@@ -10,30 +10,27 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.mitch.myapp.ui.login.LoginScreen
-import com.mitch.myapp.ui.signup.SignupScreen
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.compose.rememberNavController
+import com.mitch.myapp.ui.navigation.AppNavigation
 import com.mitch.myapp.ui.theme.MyAppTheme
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MyAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()){ innerPadding ->
-                   LoginScreen(modifier = Modifier.padding(innerPadding))
-                    SignupScreen(modifier = Modifier.padding(innerPadding)    )
-
+            MyAppTheme() {
+                val navController = rememberNavController()
+                Scaffold (modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    AppNavigation(navController, modifier= Modifier.padding(innerPadding))
+                }
             }
         }
     }
 }
-
-
-
-
-
 
 
 
@@ -43,4 +40,4 @@ fun GreetingPreview() {
     MyAppTheme {
 
     }
-}}
+}
