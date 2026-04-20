@@ -113,7 +113,7 @@ fun ForgotPasswordScreen(modifier: Modifier){
         ) {
             Text("get password reset")
         }
-//        text buttons => back to login , no account?
+//        text buttons => back to log in , no account?
         Row {
             TextButton(
                 onClick = {}

@@ -9,7 +9,7 @@ import com.mitch.myapp.ui.screens.screens.login.LoginScreen
 import com.mitch.myapp.ui.screens.screens.onboarding.OnboardingScreen
 
 @Composable
-fun AppNavigation(navController: NavHostController, modifier: Modifier){
+fun AppNavigation(navController: NavHostController, modifier: Modifier) {
     NavHost(
         navController = navController,
         startDestination = ROUTES.Onboarding.name

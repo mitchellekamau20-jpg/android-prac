@@ -13,14 +13,14 @@ import androidx.navigation.NavHostController
 import com.mitch.myapp.ui.navigation.ROUTES
 
 @Composable
-fun OnboardingScreen(navController: NavHostController){
+fun OnboardingScreen(navController: NavHostController) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        OutlinedButton(onClick = { navController.navigate(ROUTES.Login.name)}) {
-            Text(text ="Proceed")
+        OutlinedButton(onClick = { navController.navigate(ROUTES.Login.name) }) {
+            Text(text = "Proceed")
         }
     }
 }

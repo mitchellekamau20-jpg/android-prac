@@ -25,7 +25,6 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.mitch.myapp.R
-import com.mitch.myapp.ui.screens.screens.login.LottieAnimationWidget
 
 
 @Composable
@@ -90,11 +89,7 @@ fun SignupScreen(modifier: Modifier) {
 
 
 
-
-
-
-
-   @Composable
+        @Composable
 fun LottieAnimationWidget(){
     val composition by rememberLottieComposition(
         LottieCompositionSpec.RawRes(R.raw.loader)
