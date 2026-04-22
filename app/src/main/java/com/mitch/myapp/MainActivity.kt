@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
             MyAppTheme {
                 val navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()){innerpadding ->   // ✅ FIXED padding usage
-                    AppNavigation(navController. modifier Modifier.padding(innerpadding))
+                    AppNavigation(navController,  Modifier.padding(innerpadding))
                 }
             }
         }}}

@@ -1,4 +1,4 @@
-package com.mitch.myapp.ui.screens.signup.Login
+package com.mitch.myapp.ui.screens.screens.Login
 
 
 import androidx.compose.foundation.layout.Arrangement
@@ -31,6 +31,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec.RawRes
 import com.airbnb.lottie.compose.LottieConstants
@@ -45,7 +46,7 @@ import com.mitch.myapp.ui.theme.secondaryColor
 
 
 @Composable
-fun LoginScreen(modifier: Modifier){
+fun LoginScreen(navController: NavHostController, modifier: Modifier){
     //textInput
     var emailInput by remember {mutableStateOf(value = TextFieldValue(""))  }
     var passwordInput by remember {mutableStateOf(value = TextFieldValue(""))  }

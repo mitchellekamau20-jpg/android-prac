@@ -1,4 +1,4 @@
-package com.mitch.myapp.ui.authentication
+package com.mitch.myapp.ui.screens.screens.Signup
 
 
 import androidx.compose.foundation.layout.Arrangement
