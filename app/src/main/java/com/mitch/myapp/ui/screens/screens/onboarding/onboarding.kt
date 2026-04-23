@@ -2,7 +2,9 @@ package com.mitch.myapp.ui.screens.screens.onboarding
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ButtonDefaults
@@ -20,6 +22,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec.RawRes
+import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.mitch.myapp.R
@@ -58,8 +61,16 @@ fun OnboardingScreen(navController: NavHostController){
                 color = primaryColor
             )
         )
-
-
+        Spacer(modifier = Modifier.height(24.dp))
+        Text(
+            text = "Ensuring child safety",
+            style = TextStyle(
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = primaryColor
+            )
+        )
+        Spacer(modifier = Modifier.height(24.dp))
         OutlinedButton(onClick = { navController.navigate(ROUTES.Login.name)},
 
             modifier = Modifier.padding(horizontal = 24.dp),
@@ -78,7 +89,10 @@ fun OnboardingScreen(navController: NavHostController){
 @Composable
 fun LottieAnimationWidget() {
     val composition by rememberLottieComposition(spec = RawRes(resId = R.raw.loader))
-    val progress by animateLottieCompositionAsState(composition)
+    val progress by animateLottieCompositionAsState(
+        composition,
+        iterations = LottieConstants.IterateForever
+    )
     LottieAnimation(
         composition = composition,
         progress = { progress },

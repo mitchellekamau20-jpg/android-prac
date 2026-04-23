@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My App"
+rootProject.name = "Siren App"
 include(":app")

@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.mitch.myapp.R
 import com.mitch.myapp.ui.components.pagePadding
+import com.mitch.myapp.ui.navigation.ROUTES
 import com.mitch.myapp.ui.screens.screens.forgotpassword.LottieAnimationWidget
 import com.mitch.myapp.ui.theme.primaryColor
 import com.mitch.myapp.ui.theme.secondaryColor
@@ -165,15 +166,22 @@ fun LoginScreen(navController: NavHostController, modifier: Modifier) {
         Spacer(modifier = Modifier.height(24.dp))
 //         row
         Row {
-            TextButton( onClick = {}) { }
-            Text(text = "Forgot Password"
-                , style = TextStyle(
-                    fontSize = 12.sp
-                ))
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "No account?", style = TextStyle(
-                fontSize = 12.sp
-            ))
+            TextButton( onClick = {navController.navigate(ROUTES.Forgotpassword.name)}) {
+                Text(text = "Forgot Password"
+                    , style = TextStyle(
+                        fontSize = 12.sp,
+                    ))
+                Spacer(modifier = Modifier.width(8.dp))
+
+                TextButton( onClick = {navController.navigate(ROUTES.Signup.name)}) {
+                    Text(text = "No account?", style = TextStyle(
+                        fontSize = 12.sp
+                    ))
+
+
+
+            }
+
         }
     }
-}
+}}

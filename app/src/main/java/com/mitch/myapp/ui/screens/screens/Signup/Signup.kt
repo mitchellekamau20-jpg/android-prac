@@ -1,10 +1,12 @@
-package com.mitch.myapp.ui.screens.screens.Signup
+package com.mitch.myapp.ui.screens.screens.signup
 
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -39,12 +41,13 @@ import com.airbnb.lottie.compose.LottieCompositionSpec.RawRes
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.mitch.myapp.R
+import com.mitch.myapp.ui.navigation.ROUTES
 import com.mitch.myapp.ui.theme.primaryColor
 import com.mitch.myapp.ui.theme.secondaryColor
 
 
 @Composable
-fun SignupScreen(modifier: NavHostController, modifier1: Modifier) {
+fun SignupScreen(navController: NavHostController, modifier: Modifier) {
     var usernameInput by remember { mutableStateOf(value = TextFieldValue("")) }
     var emailInput by remember { mutableStateOf(value = TextFieldValue("")) }
     var passwordInput by remember { mutableStateOf(value = TextFieldValue("")) }
@@ -71,7 +74,7 @@ fun SignupScreen(modifier: NavHostController, modifier1: Modifier) {
                  unfocusedBorderColor = primaryColor,
                  ), modifier = Modifier.fillMaxWidth()
         )
-
+        Spacer(modifier = Modifier.height(24.dp))
          //emailInput
          OutlinedTextField(
             value = emailInput,
@@ -96,7 +99,7 @@ fun SignupScreen(modifier: NavHostController, modifier1: Modifier) {
 
         )
 
-
+        Spacer(modifier = Modifier.height(24.dp))
         //passwordInput
          OutlinedTextField(
             value = passwordInput,
@@ -143,6 +146,7 @@ fun SignupScreen(modifier: NavHostController, modifier1: Modifier) {
                  unfocusedBorderColor = primaryColor,
                  ),modifier = Modifier.fillMaxWidth()
         )
+        Spacer(modifier = Modifier.height(24.dp))
         //button
         OutlinedButton(
             onClick = {},
@@ -154,10 +158,10 @@ fun SignupScreen(modifier: NavHostController, modifier1: Modifier) {
         ) {
             Text("SIGNUP")
         }
-//        text buttons => back to login , no account?
+//        text buttons => back to log in , no account?
         Row {
             TextButton(
-                onClick = {}
+                onClick = { navController.navigate(ROUTES.Login.name)}
             ) {
                 Text(
                     text="back to login",
@@ -166,18 +170,12 @@ fun SignupScreen(modifier: NavHostController, modifier1: Modifier) {
                     )
                 )
             }
-            TextButton(
-                onClick = {}
-            ) {
-                Text(text="no account?",
-                    style = TextStyle(
-                        fontSize = 11.sp,
-                    ))
+
             }
         }
 
 
-    }}
+    }
 @Composable
 fun LottieAnimationWidget(){
     val composition by rememberLottieComposition(spec = RawRes(resId = R.raw.loader))

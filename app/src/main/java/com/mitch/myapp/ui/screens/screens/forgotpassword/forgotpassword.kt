@@ -46,6 +46,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.mitch.myapp.ui.theme.primaryColor
 import com.mitch.myapp.ui.theme.secondaryColor
 import com.mitch.myapp.R
+import com.mitch.myapp.ui.navigation.ROUTES
 
 /*
 * Structure(layout) : COLUMN
@@ -117,10 +118,10 @@ fun ForgotPasswordScreen(navController: NavHostController, modifier: Modifier){
         ) {
             Text("get password reset")
         }
-//        text buttons => back to login , no account?
+//        text buttons => back to log in , no account?
         Row {
             TextButton(
-                onClick = {}
+                onClick = { navController.navigate(ROUTES.Login.name)}
             ) {
                 Text(
                     text="back to login",
@@ -130,7 +131,7 @@ fun ForgotPasswordScreen(navController: NavHostController, modifier: Modifier){
                 )
             }
             TextButton(
-                onClick = {}
+                onClick = { navController.navigate(ROUTES.Signup.name)}
             ) {
                 Text(text="no account?",
                     style = TextStyle(

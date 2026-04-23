@@ -5,10 +5,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.mitch.myapp.ui.screens.screens.Signup.SignupScreen
 import com.mitch.myapp.ui.screens.screens.forgotpassword.ForgotPasswordScreen
 import com.mitch.myapp.ui.screens.screens.login.LoginScreen
 import com.mitch.myapp.ui.screens.screens.onboarding.OnboardingScreen
+import com.mitch.myapp.ui.screens.screens.signup.SignupScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController, modifier: Modifier){

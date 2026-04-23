@@ -8,6 +8,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 
@@ -18,7 +19,10 @@ val pagePadding: Dp = 16.dp
 fun LottieAnimationWidget(lottiePath:Int,size: Dp ) {
     val composition by
     rememberLottieComposition(LottieCompositionSpec.RawRes(lottiePath))
-    val progress by animateLottieCompositionAsState(composition)
+    val progress by animateLottieCompositionAsState(
+        composition,
+        iterations = LottieConstants.IterateForever
+    )
     LottieAnimation(
         composition = composition,
         progress = { progress },
