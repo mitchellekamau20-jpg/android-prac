@@ -33,6 +33,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec.RawRes
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
@@ -43,7 +44,7 @@ import com.mitch.myapp.ui.theme.secondaryColor
 
 
 @Composable
-fun SignupScreen(modifier: Modifier ) {
+fun SignupScreen(modifier: NavHostController, modifier1: Modifier) {
     var usernameInput by remember { mutableStateOf(value = TextFieldValue("")) }
     var emailInput by remember { mutableStateOf(value = TextFieldValue("")) }
     var passwordInput by remember { mutableStateOf(value = TextFieldValue("")) }

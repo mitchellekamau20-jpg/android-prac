@@ -1,5 +1,6 @@
 package com.mitch.myapp.ui.screens.screens.login
 
+//import com.mitch.myapp.ui.theme.darkColor
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,7 +42,6 @@ import androidx.navigation.NavHostController
 import com.mitch.myapp.R
 import com.mitch.myapp.ui.components.pagePadding
 import com.mitch.myapp.ui.screens.screens.forgotpassword.LottieAnimationWidget
-//import com.mitch.myapp.ui.theme.darkColor
 import com.mitch.myapp.ui.theme.primaryColor
 import com.mitch.myapp.ui.theme.secondaryColor
 
@@ -161,9 +162,10 @@ fun LoginScreen(navController: NavHostController, modifier: Modifier) {
                 modifier = Modifier.padding(horizontal = 24.dp)
             )
         }
-
+        Spacer(modifier = Modifier.height(24.dp))
 //         row
-        Row() {
+        Row {
+            TextButton( onClick = {}) { }
             Text(text = "Forgot Password"
                 , style = TextStyle(
                     fontSize = 12.sp
